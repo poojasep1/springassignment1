@@ -12,11 +12,12 @@ public class playEmployee {
 		//Employee myemployee=new Employee(4,"vasanthi",40000,"Engineer");
 		//Employee anotheremployee=new Employee(3,"Aruna",5,"SoftwareEngineer");
 		
-		EmployeeDao employeedao=new EmployeeDaoImpl();
+		//EmployeeDao employeedao=new EmployeeDaoImpl();
 		ApplicationContext context= new ClassPathXmlApplicationContext("bean.xml");
 		EmployeeDao employeedao1=(EmployeeDao)context.getBean("employeedao1");
 		
-		employeedao1.delRecordById(4);
+		//employeedao1.delRecordById(4);
+		employeedao1.delRecordByNameSalary("prathyusha", 5);
 		
 		
 		
