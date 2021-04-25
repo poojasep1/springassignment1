@@ -16,7 +16,9 @@ public class playEmployee {
 		ApplicationContext context= new ClassPathXmlApplicationContext("bean.xml");
 		//EmployeeDao employeedao1=(EmployeeDao)context.getBean("employeedao1");
 		EmployeeDaoImpl employeedao1=(EmployeeDaoImpl)context.getBean("employeedao1");
-		employeedao1.Truncate();
+		EmployeeDaoHelper helper =context.getBean("employeeDaoHelper",EmployeeDaoHelper.class);
+		helper.insertEmployee();
+		//employeedao1.Truncate();
 		//employeedao1.delRecordById(4);
 		//employeedao1.delRecordByNameSalary("bharathi", 90000);
 		

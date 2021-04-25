@@ -1,5 +1,8 @@
 package basic.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -51,5 +54,16 @@ public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 	String sql="TRUNCATE TABLE EMPLOYEE";
 	jdbcTemplate.update(sql);
 	System.out.println("table get cleaned");
+	}
+	public void insert(List<Employee> employees) {
+		String sql="INSERT INTO EMPLOYEE VALUES (?,?,?,?)";
+		ArrayList<Object[]> sqlArgs=new ArrayList<>();
+		for(Employee employee:employees) {
+			Object[] EmployeeData= {employee.getEmp_id(),employee.getEmp_name(),employee.getSalary(),employee.getDestination()};
+		sqlArgs.add(EmployeeData);
+		}
+		jdbcTemplate.batchUpdate(sql,sqlArgs);
+		
+		
 	}
 }
