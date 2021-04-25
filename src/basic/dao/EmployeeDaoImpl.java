@@ -47,4 +47,9 @@ public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		return noRecordsDeleted;
 	}
 
+	public void Truncate() {
+	String sql="TRUNCATE TABLE EMPLOYEE";
+	jdbcTemplate.update(sql);
+	System.out.println("table get cleaned");
+	}
 }

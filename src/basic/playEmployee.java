@@ -14,10 +14,11 @@ public class playEmployee {
 		
 		//EmployeeDao employeedao=new EmployeeDaoImpl();
 		ApplicationContext context= new ClassPathXmlApplicationContext("bean.xml");
-		EmployeeDao employeedao1=(EmployeeDao)context.getBean("employeedao1");
-		
+		//EmployeeDao employeedao1=(EmployeeDao)context.getBean("employeedao1");
+		EmployeeDaoImpl employeedao1=(EmployeeDaoImpl)context.getBean("employeedao1");
+		employeedao1.Truncate();
 		//employeedao1.delRecordById(4);
-		employeedao1.delRecordByNameSalary("bharathi", 90000);
+		//employeedao1.delRecordByNameSalary("bharathi", 90000);
 		
 		
 		
