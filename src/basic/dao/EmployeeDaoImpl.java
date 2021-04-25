@@ -31,5 +31,12 @@ public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		return dataSource;
 		
 	}
+	@Override
+	public void delRecordById(int emp_id) {
+		String delSql="DELETE FROM EMPLOYEE WHERE emp_id=?";
+		int noRecordsDeleted=jdbcTemplate.update(delSql,emp_id);
+		System.out.println("no of records deleted:="+noRecordsDeleted);
+		
+	}
 
 }
