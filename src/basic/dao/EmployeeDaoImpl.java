@@ -40,7 +40,7 @@ public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 	}
 	@Override
 	public int delRecordByNameSalary(String EmployeeName, int salary) {
-		String sql="DELETE FROM EMPLOYEE WHERE NAME=? OR  SALARY=?";
+		String sql="DELETE FROM EMPLOYEE WHERE NAME=? AND  SALARY=?";
 		Object[] objects= {EmployeeName,salary};
 		int noRecordsDeleted=jdbcTemplate.update(sql,objects);
 		System.out.println("no of records deleted by name or salary="+noRecordsDeleted);

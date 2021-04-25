@@ -17,7 +17,7 @@ public class playEmployee {
 		EmployeeDao employeedao1=(EmployeeDao)context.getBean("employeedao1");
 		
 		//employeedao1.delRecordById(4);
-		employeedao1.delRecordByNameSalary("prathyusha", 5);
+		employeedao1.delRecordByNameSalary("bharathi", 90000);
 		
 		
 		
