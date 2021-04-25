@@ -8,7 +8,14 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import basic.model.Employee;
 
 public class EmployeeDaoImpl implements EmployeeDao {
-private JdbcTemplate jdbcTemplate=new JdbcTemplate((DataSource) getDataSource());
+//private JdbcTemplate jdbcTemplate=new JdbcTemplate( getDataSource());
+private JdbcTemplate jdbcTemplate;
+
+	
+
+public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+	this.jdbcTemplate = jdbcTemplate;
+}
 	@Override
 	public void insert(Employee employee) {
 		String sql="INSERT INTO EMPLOYEE VALUES(?,?,?,?)";
